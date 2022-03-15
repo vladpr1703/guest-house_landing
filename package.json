@@ -1,0 +1,34 @@
+{
+  "name": "guest-house",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladpr1703/guest-house_landing.git"
+  },
+  "author": "vlad.prusakov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vladpr1703/guest-house_landing/issues"
+  },
+  "homepage": "https://github.com/vladpr1703/guest-house_landing#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.27.9",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-file-include": "^2.3.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-replace": "^1.1.3",
+    "gulp-version-number": "^0.2.4",
+    "gulp-webp-html-nosvg": "^1.0.6"
+  }
+}
