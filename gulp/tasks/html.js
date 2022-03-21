@@ -4,7 +4,7 @@ import versionNumber from "gulp-version-number";
 
 export const html = async () => {
   return app.gulp
-    .src(app.path.src.html)
+    .src(app.path.src.html, { sourcemaps: app.isDev })
     .pipe(
       app.plugins.plumber(
         app.plugins.notify.onError({
@@ -14,20 +14,23 @@ export const html = async () => {
       )
     )
     .pipe(fileInclude())
-    .pipe(app.plugins.replace(/@img\//g, "assets/images/"))
-    .pipe(webpHtmlNosvg())
+    .pipe(app.plugins.replace(/@img\//g, "img/"))
+    .pipe(app.plugins.if(app.isBuild, webpHtmlNosvg()))
     .pipe(
-      versionNumber({
-        value: "%DT%",
-        append: {
-          key: "_v",
-          cover: 0,
-          to: ["css", "js"],
-        },
-        output: {
-          file: "gulp/version.json",
-        },
-      })
+      app.plugins.if(
+        app.isBuild,
+        versionNumber({
+          value: "%DT%",
+          append: {
+            key: "_v",
+            cover: 0,
+            to: ["css", "js"],
+          },
+          output: {
+            file: "gulp/version.json",
+          },
+        })
+      )
     )
     .pipe(app.gulp.dest(app.path.build.html))
     .pipe(app.plugins.browserSync.stream());
