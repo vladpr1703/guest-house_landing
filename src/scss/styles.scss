@@ -93,7 +93,7 @@
 }
 
 .rectangle {
-  width: 48px;
+  width: 48px !important;
   height: 8px;
   background-color: #e08631;
   margin-bottom: 33px;
@@ -190,12 +190,245 @@ button:hover {
       }
     }
   }
+}
 
-  .advantages-section {
-    height: 500px;
+.advantages-section {
+  height: 726px;
+  width: inherit;
+  padding: 100px 10vw 136px;
+  p {
+    @include header-text();
+  }
+
+  div {
+    width: 554px;
+    margin-bottom: 30px;
+
+    p {
+      line-height: 36px;
+      margin-bottom: 14px;
+    }
+  }
+  .advantages-section_list {
+    display: flex;
+    .advantages-section_list__elem {
+      display: flex;
+      height: 72px;
+
+      img {
+        margin-right: 16px;
+      }
+
+      div {
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.reviews-section {
+  background-color: #faf8f0;
+  height: 682px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  @include flex-column();
+
+  .reviews-section-text {
+    width: 572px;
+    text-align: center;
+    margin-bottom: 30px;
 
     p {
       @include header-text();
+      margin-bottom: 14px;
+    }
+  }
+
+  .carousel {
+    width: 100%;
+    cursor: grab;
+    padding: 0 270px 0 136px;
+
+    &.dragging {
+      cursor: grabbing;
+    }
+
+    &--wrap {
+      display: flex;
+    }
+
+    &--item {
+      user-select: none;
+      width: 584px;
+      min-width: 584px;
+      height: 266px;
+      background-color: #ffffff;
+      margin-right: 20px;
+      padding: 33px 47px 31px 31px;
+
+      p {
+        font-size: 18px;
+        line-height: 24px;
+        margin: 10px 0 11px;
+      }
+
+      span {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+.bedroom-section {
+  height: 630px;
+  background-image: url("@img/bedroom.png");
+  background-size: 100%;
+}
+
+.some-section {
+  height: 366px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    @include header-text();
+    margin-bottom: 14px;
+  }
+
+  div {
+    width: 584px;
+  }
+
+  .some-section_advantages__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    div {
+      width: 50%;
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 16px;
+      }
+
+      span {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      &:first-child,
+      &:nth-child(2) {
+        margin-bottom: 59px;
+      }
+    }
+  }
+}
+
+.contact-section {
+  height: 478px;
+  background-color: #faf8f0;
+  @include flex-column();
+
+  .contact-section_text {
+    width: 550px;
+    text-align: center;
+    margin-bottom: 18px;
+
+    p {
+      @include header-text();
+      margin-bottom: 14px;
+    }
+  }
+
+  .contact-section_button_contact {
+    width: 116px;
+    height: 52px;
+    background-color: #faf8f0;
+    border: 4px solid #52503b;
+    box-sizing: border-box;
+    border-radius: 6px;
+    margin-right: 20px;
+  }
+
+  .contact-section_button_book {
+    width: 133px;
+    height: 52px;
+    color: white;
+    background: #52503b;
+    border-radius: 6px;
+  }
+}
+
+footer {
+  height: 608px;
+  background-color: #52503b;
+  @include flex-column();
+  color: white;
+
+  .footer-navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        margin-bottom: 10px;
+      }
+    }
+
+    .social-media-links {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      width: 120px;
+    }
+
+    .newsletter {
+      display: flex;
+      flex-direction: column;
+      width: 576px;
+
+      span {
+        font-size: 14px;
+      }
+
+      form {
+        margin-top: 9px;
+        position: relative;
+
+        input {
+          height: 52px;
+          width: 100%;
+          border: 1px solid #e5e7eb;
+          box-sizing: border-box;
+          border-radius: 8px;
+          padding-left: 30px;
+        }
+
+        button {
+          position: absolute;
+          right: 1.91%;
+          top: calc(50% - 30px / 2);
+          color: white;
+          background: #52503b;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  .footer-info {
+    img {
+      margin: 0 auto 20px;
     }
   }
 }
